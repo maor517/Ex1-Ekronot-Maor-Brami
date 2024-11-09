@@ -104,6 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\Cyber_User\Documents\Magshimim\Ekronot\C1\Ex1\Ex1-Ekronot-Maor-Brami\Ex1;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -127,11 +128,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\..\..\..\Downloads\1-20241103T174532Z-001\1\Part1Tester.cpp" />
     <ClCompile Include="LinkedList.cpp" />
+    <ClCompile Include="main1.cpp" />
+    <ClCompile Include="main2.cpp" />
     <ClCompile Include="Queue.cpp" />
+    <ClCompile Include="Stack.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\..\..\Downloads\2-20241103T174536Z-001\2\Stack.h" />
     <ClInclude Include="LinkedList.h" />
     <ClInclude Include="Queue.h" />
   </ItemGroup>

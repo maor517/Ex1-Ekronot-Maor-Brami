@@ -6,5 +6,5 @@ typedef struct LinkedList
 	LinkedList* next;
 } LinkedList;
 void add(LinkedList** l, int val);
-void sub(LinkedList** l);
+bool sub(LinkedList** l);
 #endif /* LINKEDLIST_H */

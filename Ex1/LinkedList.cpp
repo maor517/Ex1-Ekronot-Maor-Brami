@@ -3,25 +3,26 @@
 
 void add(LinkedList** l, int val)
 {
-	LinkedList* new_element = new LinkedList;
-	LinkedList* last = *l;
-	new_element->value = val;
-	new_element->next = NULL;
-	if (*l == NULL)
-	{
-		*l = new_element;
-	}
-	else
-	{
-		while(last->next != NULL)
-		{
-			last = last->next;
-		}
-		last->next = new_element;
-	}
+    LinkedList* newList = new LinkedList;
+    newList->value = val;
+    newList->next = NULL;
+    if (*l == NULL)
+    {
+        *l = newList;
+    }
+    else
+    {
+        LinkedList* last = *l;
+        while (last != NULL && last->next != NULL)
+        {
+            last = last->next;
+        }
+        last->next = newList;
+    }
 }
 
-void sub(LinkedList** l)
+
+bool sub(LinkedList** l)
 {
     if (*l != NULL)
     {
@@ -37,7 +38,10 @@ void sub(LinkedList** l)
             {
                 secondLast = secondLast->next;
             }
+            delete secondLast->next;
             secondLast->next = NULL;
         }
+        return true;
     }
+    return false;
 }
