@@ -1,16 +1,16 @@
 #include <iostream>
 #include "Stack.h"
 
-int main() 
+int main2()
 {
     Stack myStack;
     initStack(&myStack);
     std::cout << "Is stack empty? ";
-    if (isEmpty(&myStack)) 
+    if (isEmpty(&myStack))
     {
         std::cout << "Yes" << std::endl;
     }
-    else 
+    else
     {
         std::cout << "No" << std::endl;
     }
@@ -19,51 +19,43 @@ int main()
     push(&myStack, 20);
     push(&myStack, 30);
     std::cout << "Is stack empty? ";
-    if (isEmpty(&myStack)) 
+    if (isEmpty(&myStack))
     {
         std::cout << "Yes" << std::endl;
     }
-    else 
+    else
     {
         std::cout << "No" << std::endl;
     }
     std::cout << "Popping elements from the stack..." << std::endl;
     int poppedValue = pop(&myStack);
-    if (poppedValue == 0) 
+    if (poppedValue != -1)
     {
-        std::cout << "Popped: Success" << std::endl;
+        std::cout << "Popped: " << poppedValue << std::endl;
     }
-    else 
-    {
-        std::cout << "Popped: Failure" << std::endl;
-    }
-    poppedValue = pop(&myStack);
-    if (poppedValue == 0) 
-    {
-        std::cout << "Popped: Success" << std::endl;
-    }
-    else 
+    else
     {
         std::cout << "Popped: Failure" << std::endl;
     }
     poppedValue = pop(&myStack);
-    if (poppedValue == 0) 
+    if (poppedValue != -1)
     {
-        std::cout << "Popped: Success" << std::endl;
+        std::cout << "Popped: " << poppedValue << std::endl;
     }
-    else 
+    else
     {
         std::cout << "Popped: Failure" << std::endl;
     }
     poppedValue = pop(&myStack);
-    if (poppedValue == -1) 
+    if (poppedValue != -1)
     {
-        std::cout << "Popped from empty stack: Failure (stack is empty)" << std::endl;
+        std::cout << "Popped: " << poppedValue << std::endl;
     }
-    else 
+    else
     {
-        std::cout << "Popped: Success" << std::endl;
+        std::cout << "Popped: Failure" << std::endl;
     }
+    poppedValue = pop(&myStack);
     cleanStack(&myStack);
     return 0;
 }

@@ -1,7 +1,7 @@
 #include "Queue.h"
 #include <iostream>
 
-int main12()
+int main()
 {
     Queue q;
     initQueue(&q, 5);

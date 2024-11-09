@@ -26,11 +26,12 @@ void push(Stack* s, unsigned int element)
 
 int pop(Stack* s)
 {
-	if (sub(&(s->list)))
+	int poppedVal = sub(&(s->list));
+	if (poppedVal != -1)
 	{
-		return 0;
+		s->count--;
 	}
-	return -1;
+	return poppedVal;
 }
 
 bool isEmpty(Stack* s)

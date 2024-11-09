@@ -1,6 +1,5 @@
 #include "LinkedList.h"
 #include <iostream>
-
 void add(LinkedList** l, int val)
 {
     LinkedList* newList = new LinkedList;
@@ -22,12 +21,14 @@ void add(LinkedList** l, int val)
 }
 
 
-bool sub(LinkedList** l)
+int sub(LinkedList** l)
 {
     if (*l != NULL)
     {
+        int lastVal = 0;
         if ((*l)->next == NULL)
         {
+            lastVal = (*l)->value;
             delete* l;
             *l = NULL;
         }
@@ -38,10 +39,11 @@ bool sub(LinkedList** l)
             {
                 secondLast = secondLast->next;
             }
+            lastVal = secondLast->next->value;
             delete secondLast->next;
             secondLast->next = NULL;
         }
-        return true;
+        return lastVal;
     }
-    return false;
+    return -1;
 }
